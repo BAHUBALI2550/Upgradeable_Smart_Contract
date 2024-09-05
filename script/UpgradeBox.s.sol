@@ -8,8 +8,8 @@ import {BoxV1} from "../src/BoxV1.sol";
 import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 
 contract UpgradeBox is Script {
-    function run() external returns (address){
-        address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("ERC1967Proxy",block.chainid);
+    function run() external returns (address) {
+        address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("ERC1967Proxy", block.chainid);
 
         vm.startBroadcast();
         BoxV2 newBox = new BoxV2();
